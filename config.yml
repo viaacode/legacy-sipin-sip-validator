@@ -1,0 +1,17 @@
+viaa:
+    logging:
+        level: DEBUG
+app:
+    pulsar:            
+        host: !ENV ${PULSAR_HOST}
+        port: !ENV ${PULSAR_PORT}
+    unzip-service:
+        consumer_topic: !ENV ${UNZIP_CONSUMER_TOPIC}
+        producer_topic: !ENV ${UNZIP_PRODUCER_TOPIC}
+        target_folder: !ENV ${UNZIP_TARGET_FOLDER}
+    aip-creator:
+        consumer_topic: !ENV ${AIP_CONSUMER_TOPIC}
+        producer_topic: !ENV ${AIP_PRODUCER_TOPIC}
+        pid_url: !ENV ${PID_URL}
+        aip_folder: !ENV ${AIP_FOLDER}
+        host: !ENV ${HOST}
