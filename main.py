@@ -8,7 +8,7 @@ from viaa.configuration import ConfigParser
 from viaa.observability import logging
 from logging import Logger
 
-from lib.events import (
+from cloudevents.events import (
     CEMessageMode,
     Event,
     EventOutcome,
