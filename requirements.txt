@@ -4,5 +4,5 @@ pulsar-client==2.8.0
 six==1.16.0
 retry==0.9.2
 viaa-chassis==0.2.0rc1
-meemoo-cloudevents==0.1.0rc2
+meemoo-cloudevents==0.1.0rc3
 bagit==1.8.1
