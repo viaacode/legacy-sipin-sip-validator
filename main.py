@@ -126,7 +126,7 @@ if __name__ == "__main__":
         try:
             event = PulsarBinding.from_protocol(msg)
             # Event with outcome == "success"
-            if event.has_successful_outcome:
+            if event.has_successful_outcome():
                 data = event.get_data()
                 log.info(f"incoming event: {data}")
 
