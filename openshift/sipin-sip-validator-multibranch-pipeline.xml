@@ -1,7 +1,7 @@
 <?xml version='1.1' encoding='UTF-8'?>
 <org.jenkinsci.plugins.workflow.multibranch.WorkflowMultiBranchProject plugin="workflow-multibranch">
     <actions/>
-    <description>Job for sipin-sip-validator</description>
+    <description>Job for legacy-sipin-sip-validator</description>
     <properties>
         <org.jenkinsci.plugins.docker.workflow.declarative.FolderConfig plugin="docker-workflow">
             <dockerLabel></dockerLabel>
@@ -37,8 +37,8 @@
                     <apiUri>https://api.github.com</apiUri>
                     <credentialsId>meemoo-ci</credentialsId>
                     <repoOwner>viaacode</repoOwner>
-                    <repository>sipin-sip-validator</repository>
-                    <repositoryUrl>https://github.com/viaacode/sipin-sip-validator</repositoryUrl>
+                    <repository>legacy-sipin-sip-validator</repository>
+                    <repositoryUrl>https://github.com/viaacode/legacy-sipin-sip-validator</repositoryUrl>
                     <traits>
                         <org.jenkinsci.plugins.github__branch__source.BranchDiscoveryTrait>
                             <strategyId>3</strategyId>
