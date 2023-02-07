@@ -3,22 +3,22 @@ kind: Template
 metadata:
   annotations:
     tags: "exec"
-  name: "sipin-sip-validator"
+  name: "legacy-sipin-sip-validator"
   labels:
-    app: "sipin-sip-validator"
+    app: "legacy-sipin-sip-validator"
 objects:
   - kind: Service
     apiVersion: v1
     metadata:
-      name: "sipin-sip-validator-${env}"
+      name: "legacy-sipin-sip-validator-${env}"
       namespace: "sipin"
       labels:
-        app: "sipin-sip-validator"
-        app.kubernetes.io/component: "sipin-sip-validator-${env}"
-        app.kubernetes.io/instance: "sipin-sip-validator-${env}"
-        app.kubernetes.io/name: "sipin-sip-validator"
-        app.kubernetes.io/part-of: "sipin-sip-validator"
-        app.openshift.io/runtime: "sipin-sip-validator"
+        app: "legacy-sipin-sip-validator"
+        app.kubernetes.io/component: "legacy-sipin-sip-validator-${env}"
+        app.kubernetes.io/instance: "legacy-sipin-sip-validator-${env}"
+        app.kubernetes.io/name: "legacy-sipin-sip-validator"
+        app.kubernetes.io/part-of: "legacy-sipin-sip-validator"
+        app.openshift.io/runtime: "legacy-sipin-sip-validator"
         app.openshift.io/runtime-version: "${env}"
         env: ${env}
     spec:
@@ -28,7 +28,7 @@ objects:
           targetPort: ${{svc_port}}
           name: http
       selector:
-        app: "sipin-sip-validator"
+        app: "legacy-sipin-sip-validator"
         env: ${env}
       clusterIP:
       type: ClusterIP
@@ -40,35 +40,35 @@ objects:
     metadata:
       annotations:
         alpha.image.policy.openshift.io/resolve-names: "*"
-      name: "sipin-sip-validator-${env}"
+      name: "legacy-sipin-sip-validator-${env}"
       namespace: "sipin"
       labels:
-        app: "sipin-sip-validator"
-        app.kubernetes.io/component: "sipin-sip-validator-${env}"
-        app.kubernetes.io/instance: "sipin-sip-validator-${env}"
-        app.kubernetes.io/name: "sipin-sip-validator"
-        app.kubernetes.io/part-of: "sipin-sip-validator"
-        app.openshift.io/runtime: "sipin-sip-validator"
+        app: "legacy-sipin-sip-validator"
+        app.kubernetes.io/component: "legacy-sipin-sip-validator-${env}"
+        app.kubernetes.io/instance: "legacy-sipin-sip-validator-${env}"
+        app.kubernetes.io/name: "legacy-sipin-sip-validator"
+        app.kubernetes.io/part-of: "legacy-sipin-sip-validator"
+        app.openshift.io/runtime: "legacy-sipin-sip-validator"
         app.openshift.io/runtime-version: ${env}
         env: ${env}
     spec:
       replicas: 0
       selector:
         matchLabels:
-          app: "sipin-sip-validator"
+          app: "legacy-sipin-sip-validator"
           env: ${env}
       template:
         metadata:
           creationTimestamp: null
           labels:
-            app: "sipin-sip-validator"
-            deploymentconfig: "sipin-sip-validator-${env}"
+            app: "legacy-sipin-sip-validator"
+            deploymentconfig: "legacy-sipin-sip-validator-${env}"
             env: ${env}
           annotations:
             openshift.io/generated-by: OpenShiftWebConsole
         spec:
           containers:
-            - name: "sipin-sip-validator-${env}"
+            - name: "legacy-sipin-sip-validator-${env}"
               terminationMessagePath: /dev/termination-log
               resources:
                 limits:
@@ -83,7 +83,7 @@ objects:
               imagePullPolicy: IfNotPresent
               terminationMessagePolicy: File
               image: >-
-                image-registry.openshift-image-registry.svc:5000/sipin/sipin-sip-validator:${env}
+                image-registry.openshift-image-registry.svc:5000/sipin/legacy-sipin-sip-validator:${env}
           restartPolicy: Always
           terminationGracePeriodSeconds: 30
           dnsPolicy: ClusterFirst
