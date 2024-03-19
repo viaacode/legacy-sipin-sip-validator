@@ -111,7 +111,7 @@ pipeline {
                         remoteInt.password = SSH_PASSWORD
                         remoteInt.user = SSH_USER
                     }
-                    sshCommand remote: remoteInt, command: "cd /opt/sipin/ && ./deploy_single.sh $APP_NAME"
+                    sshCommand remote: remoteInt, command: "cd /opt/legacy-sipin/ && ./deploy_single.sh $APP_NAME"
                 }
             }
             post {
@@ -136,7 +136,7 @@ pipeline {
                         remoteQas.password = SSH_PASSWORD
                         remoteQas.user = SSH_USER
                     }
-                    sshCommand remote: remoteQas, command: "cd /opt/sipin/ && ./deploy_single.sh $APP_NAME"
+                    sshCommand remote: remoteQas, command: "cd /opt/legacy-sipin/ && ./deploy_single.sh $APP_NAME"
                 }
             }
             post {
@@ -158,7 +158,7 @@ pipeline {
                         remotePrd.password = SSH_PASSWORD
                         remotePrd.user = SSH_USER
                     }
-                    sshCommand remote: remotePrd, command: "cd /opt/sipin/ && ./deploy_single.sh $APP_NAME"
+                    sshCommand remote: remotePrd, command: "cd /opt/legacy-sipin/ && ./deploy_single.sh $APP_NAME"
                 }
             }
         }
